@@ -1,45 +1,56 @@
 import random
 
-creditos = 100
+print("\n===================================")
+print("   🎲 BEM-VINDO AO JOGO DE APOSTAS 🎲")
+print("===================================\n")
+print(" Regras:")
+print(" - Você aposta um valor em R$.")
+print(" - Escolhe um número de 0 a 15.")
+print(" - 6 números serão sorteados.")
+print(" - Se um deles for igual ao seu, você ganha 2x o valor apostado!\n")
 
-print("Bem-vindo ao jogo de apostas.\n")
-print("Aqui você apostará seus créditos com base na sorte.")
-print("Um número aleatório entre 0 e 10 será sorteado.")
-print("Se o número sorteado for igual ao número que você escolheu, você ganha 2x o valor apostado.\n")
+
+creditos = int(input(" Deposite quantos R$ você deseja jogar: "))
 
 while creditos > 0:
-    print(f"\nVocê tem {creditos} R$.")
-    aposta = int(input("Digite quantos reais você quer apostar: "))
+    print("\n-----------------------------------")
+    print(" 💰 Créditos atuais:", creditos, "R$")
+    aposta = int(input(" Quanto deseja apostar? "))
 
-    if aposta > 0 and aposta <= creditos:
-        print(f"Você apostará {aposta} R$ dos seus {creditos} R$.")
+    if aposta <= 0 or aposta > creditos:
+        print(" ❌ Valor inválido, tente novamente.")
+        continue
 
-        escolha = int(input("Agora escolha um número entre 0 e 10: "))
+    escolha = int(input(" Escolha um número entre 0 e 15: "))
+    if escolha < 0 or escolha > 15:
+        print(" ❌ Número inválido, tente novamente.")
+        continue
 
-        if escolha >= 0 and escolha <= 10:
-            print("Você escolheu o número", escolha)
-
-            escolha2 = input("Você deseja prosseguir com esse número? (s/n): ")
-            if escolha2.lower() == "s":
-              
-                sorteado = random.randint(0, 10)
-                print("Número sorteado foi:", sorteado)
-
-                if sorteado == escolha:
-                    ganho = aposta * 2
-                    creditos += ganho
-                    print(f"🎉 Parabéns! Você ganhou {ganho} R$. Agora você tem {creditos} R$. Aproveite e siga jogando! 😄")
-                else:
-                    creditos -= aposta
-                    print(f"😢 Que pena! Você perdeu {aposta} R$. Agora você tem {creditos} R$, mas não perca as esperanças!")
-            else:
-                print("Aposta cancelada.")
-                sair = input("Deseja sair do jogo? Decida bem, pois tenho certeza que você ganhará!😸 (s/n): ")
-                if sair.lower() == "s":
-                    break
+    confirmar = input(f" Confirmar aposta de {aposta} R$ no número {escolha}? (s/n): ")
+    if confirmar.lower() != "s":
+        sair = input(" Deseja sair do jogo? (s/n): ")
+        if sair.lower() == "s":
+            break
         else:
-            print("Escolha inválida. Digite um número entre 0 e 10.")
-    else:
-        print("Valor da aposta inválido.")
+            continue
 
-print("\n💀 Fim do jogo. Você ficou pobre ou desistiu.")
+    
+    sorteados = [random.randint(0, 15) for _ in range(6)]
+
+    print("\n 🔢 Números sorteados:")
+    print(" ---------------------")
+    print(" |", sorteados[0], "|", sorteados[1], "|", sorteados[2], "|")
+    print(" |", sorteados[3], "|", sorteados[4], "|", sorteados[5], "|")
+    print(" ---------------------")
+
+    if escolha in sorteados:
+        ganho = aposta * 2
+        creditos += ganho
+        print(f"\n 🎉 Parabéns! Você ganhou {ganho} R$!")
+    else:
+        creditos -= aposta
+        print(f"\n 😢 Que pena! Você perdeu {aposta} R$.")
+
+print("\n===================================")
+print(" 💀 Fim do jogo. Você ficou sem créditos ou desistiu.")
+print("===================================\n")
