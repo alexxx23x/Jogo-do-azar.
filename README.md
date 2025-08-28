@@ -9,4 +9,6 @@ Explicação:
 Ele foi feito para que você aposte de 0 a 15 e veja se ganhou.
 
 Como rodar:
-Linguagem utilizada: Python, IDE utilizado: Visual Studio Code
+
+Linguagem utilizada: Python.
+IDE utilizado: Visual Studio Code.
