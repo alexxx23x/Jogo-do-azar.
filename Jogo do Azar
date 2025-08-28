@@ -52,6 +52,7 @@ while creditos > 0:
         print(f"\n 😢 Que pena! Você perdeu {aposta} R$.")
 
 print("\n===================================")
-print(" 💀 Fim do jogo. Você ficou sem créditos ou desistiu.")
+print(" 💀 Fim do jogo. Você ficou sem dinheiro ou desistiu.")
 print("===================================\n")
+
 
