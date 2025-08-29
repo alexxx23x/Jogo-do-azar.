@@ -16,3 +16,7 @@ Acessar o cmd, escrever "git clone", depois colocar o URL do código, logo após
 Linguagem utilizada: Python.
 
 IDE utilizado: Visual Studio Code.
+
+Fluxograma: 
+
+[Fluxograma feito - Azar..pdf](https://github.com/user-attachments/files/22035440/Fluxograma.feito.-.Azar.pdf)
