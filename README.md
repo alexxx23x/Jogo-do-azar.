@@ -11,6 +11,8 @@ Ele foi feito para que você aposte de 0 a 15 e veja se ganhou.
 
 Como rodar:
 
+Acessar o cmd, escrever "git clone", depois colocar o URL do código, logo após -> ENTER, colocar o CD e o nome do jogo -> ENTER => Python main.py
+
 Linguagem utilizada: Python.
 
 IDE utilizado: Visual Studio Code.
