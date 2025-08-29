@@ -14,7 +14,7 @@ creditos = int(input(" Deposite quantos R$ você deseja jogar: "))
 
 while creditos > 0:
     print("\n-----------------------------------")
-    print(" 💰 Créditos atuais:", creditos, "R$")
+    print(" 💰 R$ atuais:", creditos, "R$")
     aposta = int(input(" Quanto deseja apostar? "))
 
     if aposta <= 0 or aposta > creditos:
@@ -54,3 +54,4 @@ while creditos > 0:
 print("\n===================================")
 print(" 💀 Fim do jogo. Você ficou sem dinheiro ou desistiu.")
 print("===================================\n")
+
